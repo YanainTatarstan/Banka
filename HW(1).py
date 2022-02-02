@@ -25,16 +25,16 @@ minutes = residue // 60
 sec = residue % 60
 print(f"{time_in_sec} секунд, это: {hours} ч; {minutes} мин; {sec} сек ")
 
-number_n = int(input("Введите целое число n (от 1 до 99999): "))
-while number_n >= 1 and number_n <= 99999:
-    a = int(number_n + number_n)
-    b = int(number_n + number_n + number_n)
-    sum = int(number_n) + a + b
-    print(f"Число n равно - {number_n}; Сумма чисел n + nn + nnn равна - {sum}")
-    break
-else:
-    var = number_n <= 1 and number_n >= 99999
-    print("Вы ввели более 99999 или менее 1, попробуйте еще раз")
+while True:
+    number_n = int(input("Введите целое число n (от 1 до 99999): "))
+    if number_n >= 1 and number_n <= 99999:
+        a = int(number_n + number_n)
+        b = int(number_n + number_n + number_n)
+        sum = int(number_n) + a + b
+        print(f"Число n равно - {number_n}; Сумма чисел n + nn + nnn равна - {sum}")
+        break
+    elif number_n <= 1 and number_n >= 99999:
+        print("Вы ввели более 99999 или менее 1, попробуйте еще раз")
 
 number = input("Введите любое целое число (напр. 12345): ")
 x = 0

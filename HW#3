@@ -108,7 +108,7 @@ def int_func(word):
 
 
 los = []
-for i in input('Введите строку, слова в которой разделены пробелами: ').split(' '):
+for i in input("Введите предложение: ").split(" "):
     los.append(int_func(i))
 
-print(f'Вариант2 Строка получается вот такая: {" ".join(los)}')
+print(f'Хэй!: {" ".join(los)}')

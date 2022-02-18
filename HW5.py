@@ -93,3 +93,26 @@ print(dict_)
 #Далее реализовать список. Он должен содержать словарь с фирмами и их прибылями, а также словарь со средней прибылью. Если фирма получила убытки, также добавить её в словарь (со значением убытков).
 #Пример списка: [{“firm_1”: 5000, “firm_2”: 3000, “firm_3”: 1000}, {“average_profit”: 2000}]. Итоговый список сохранить в виде json-объекта в соответствующий файл.
 #Пример json-объекта: [{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]. Подсказка: использовать менеджер контекста.
+
+import json
+
+
+file = []
+fine = {}
+nine = {}
+num = 0
+summ = 0
+
+with open('7_firma', 'r+', encoding='utf-8') as f:
+    for line in f.readlines():
+        profit = float(line.split()[2]) - float(line.split()[3])
+        if profit > 0:
+            num += 1
+            summ += profit
+            fine[line.split()[0]] = profit
+nine['Средняя выручка'] = summ / num
+file = [fine, nine]
+print(file)
+
+with open('7.json', 'w', encoding='utf-8') as f:
+    json.dump(file, f, ensure_ascii=False)
